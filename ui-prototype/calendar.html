@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chartix - Economic Calendar</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sticky Top Header -->
+        <header class="top-header">
+            <a href="index.html" class="logo-container">Chart<span>ix</span></a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">Dashboard</a>
+                <a href="markets.html" class="nav-item">Markets</a>
+                <a href="news.html" class="nav-item">News</a>
+                <a href="calendar.html" class="nav-item active">Calendar</a>
+            </nav>
+            <div class="market-ticker">
+                <div class="ticker-item"><span class="ticker-pair">BTC/USDT</span><span class="ticker-price up">64,230.50</span></div>
+            </div>
+            <div class="header-actions">
+                <a href="login.html" class="btn-connect">Login</a>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-wrapper">
+            <main class="main-area">
+                <div>
+                    <h1 class="page-title">Economic Calendar</h1>
+                    <p class="page-subtitle">Track important macroeconomic events affecting the markets.</p>
+                </div>
+                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-title">Today's Events</div>
+                    </div>
+                    <div class="table-container">
+                        <table class="cal-table">
+                            <thead>
+                                <tr>
+                                    <th>Time (GMT+7)</th>
+                                    <th>Country</th>
+                                    <th>Impact</th>
+                                    <th>Event</th>
+                                    <th>Actual</th>
+                                    <th>Forecast</th>
+                                    <th>Previous</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>14:00</td>
+                                    <td><span style="font-size:18px">🇬🇧</span> GBP</td>
+                                    <td><span class="impact-badge impact-med">Medium</span></td>
+                                    <td style="font-weight:500;">GDP (MoM)</td>
+                                    <td>0.2%</td>
+                                    <td>0.2%</td>
+                                    <td>-0.1%</td>
+                                </tr>
+                                <tr>
+                                    <td>19:30</td>
+                                    <td><span style="font-size:18px">🇺🇸</span> USD</td>
+                                    <td><span class="impact-badge impact-high">High</span></td>
+                                    <td style="font-weight:500;">Core CPI (MoM)</td>
+                                    <td style="color:var(--color-down); font-weight:700;">0.4%</td>
+                                    <td>0.3%</td>
+                                    <td>0.3%</td>
+                                </tr>
+                                <tr>
+                                    <td>21:00</td>
+                                    <td><span style="font-size:18px">🇺🇸</span> USD</td>
+                                    <td><span class="impact-badge impact-high">High</span></td>
+                                    <td style="font-weight:500;">Fed Chair Powell Speaks</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Tomorrow 01:00</td>
+                                    <td><span style="font-size:18px">🇪🇺</span> EUR</td>
+                                    <td><span class="impact-badge impact-low">Low</span></td>
+                                    <td style="font-weight:500;">ECB Press Conference</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Prominent AI Assistant Panel -->
+            <aside class="ai-panel">
+                <div class="ai-header">
+                    <div class="ai-avatar">AI</div>
+                    <div class="ai-title"><h3>Chartix Intelligence</h3><p>Online & Ready</p></div>
+                </div>
+                <div class="chat-history" id="chat-container">
+                    <div class="msg ai">
+                        <div class="msg-bubble">
+                            Chỉ số Core CPI của Mỹ vừa công bố cao hơn dự báo (0.4% so với 0.3%). Điều này thường mang ý nghĩa **tiêu cực** cho tài sản rủi ro (như Crypto) do lo ngại FED giữ nguyên lãi suất.
+                            <br><br>
+                            Bạn có muốn xem gợi ý lệnh Short BTC lúc này không?
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <div class="input-box">
+                        <input type="text" placeholder="Hỏi AI về lịch kinh tế..." id="chat-input" autocomplete="off">
+                        <button class="btn-send" id="btn-send"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

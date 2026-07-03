@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chartix - News</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sticky Top Header -->
+        <header class="top-header">
+            <a href="index.html" class="logo-container">Chart<span>ix</span></a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">Dashboard</a>
+                <a href="markets.html" class="nav-item">Markets</a>
+                <a href="news.html" class="nav-item active">News</a>
+                <a href="calendar.html" class="nav-item">Calendar</a>
+            </nav>
+            <div class="market-ticker">
+                <div class="ticker-item"><span class="ticker-pair">BTC/USDT</span><span class="ticker-price up">64,230.50</span></div>
+            </div>
+            <div class="header-actions">
+                <a href="login.html" class="btn-connect">Login</a>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-wrapper">
+            <main class="main-area">
+                <div>
+                    <h1 class="page-title">Market News</h1>
+                    <p class="page-subtitle">Latest updates from the crypto and forex world.</p>
+                </div>
+                
+                <div class="news-grid">
+                    <a href="news-detail.html" class="news-card">
+                        <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span>CoinDesk</span>
+                                <span>10 mins ago</span>
+                            </div>
+                            <h3 class="news-card-title">Bitcoin ETFs see $500M inflows as institutional adoption grows.</h3>
+                            <p class="news-excerpt">Major institutional players are ramping up their cryptocurrency investments, driving record inflows into newly approved spot Bitcoin ETFs this week...</p>
+                            <span class="news-tag">CRYPTO</span>
+                        </div>
+                    </a>
+
+                    <a href="news-detail.html" class="news-card">
+                        <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span>Bloomberg</span>
+                                <span>1 hour ago</span>
+                            </div>
+                            <h3 class="news-card-title">Fed signals potential rate cuts by Q3, boosting risk assets.</h3>
+                            <p class="news-excerpt">The Federal Reserve chairman hinted at a dovish pivot later this year, sending equity and crypto markets surging amid hopes of cheaper liquidity...</p>
+                            <span class="news-tag">MACRO</span>
+                        </div>
+                    </a>
+
+                    <a href="news-detail.html" class="news-card">
+                        <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span>Reuters</span>
+                                <span>3 hours ago</span>
+                            </div>
+                            <h3 class="news-card-title">European Central Bank maintains current interest rates.</h3>
+                            <p class="news-excerpt">The ECB opted to keep interest rates steady at 4.0%, balancing concerns over sluggish growth with lingering inflationary pressures across the Eurozone...</p>
+                            <span class="news-tag">FOREX</span>
+                        </div>
+                    </a>
+
+                    <a href="news-detail.html" class="news-card">
+                        <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1621504450181-5d156f065317?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span>CoinTelegraph</span>
+                                <span>5 hours ago</span>
+                            </div>
+                            <h3 class="news-card-title">Ethereum network successfully completes Dencun upgrade.</h3>
+                            <p class="news-excerpt">Layer 2 transaction fees are expected to drop significantly following the successful deployment of the highly anticipated Dencun hard fork...</p>
+                            <span class="news-tag">ALTCOINS</span>
+                        </div>
+                    </a>
+                </div>
+            </main>
+
+            <!-- Prominent AI Assistant Panel -->
+            <aside class="ai-panel">
+                <div class="ai-header">
+                    <div class="ai-avatar">AI</div>
+                    <div class="ai-title"><h3>Chartix Intelligence</h3><p>Online & Ready</p></div>
+                </div>
+                <div class="chat-history" id="chat-container">
+                    <div class="msg ai"><div class="msg-bubble">Tôi có thể tóm tắt các tin tức nổi bật hôm nay hoặc phân tích tác động của tin FED đến giá vàng và USD.</div></div>
+                </div>
+                <div class="chat-input-area">
+                    <div class="input-box">
+                        <input type="text" placeholder="Hỏi AI về tin tức..." id="chat-input" autocomplete="off">
+                        <button class="btn-send" id="btn-send"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

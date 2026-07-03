@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chartix - Markets</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Sticky Top Header -->
+        <header class="top-header">
+            <a href="index.html" class="logo-container">Chart<span>ix</span></a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">Dashboard</a>
+                <a href="markets.html" class="nav-item active">Markets</a>
+                <a href="news.html" class="nav-item">News</a>
+                <a href="calendar.html" class="nav-item">Calendar</a>
+            </nav>
+            <div class="market-ticker">
+                <div class="ticker-item"><span class="ticker-pair">BTC/USDT</span><span class="ticker-price up">64,230.50</span></div>
+            </div>
+            <div class="header-actions"><a href="login.html" class="btn-connect">Login</a></div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-wrapper">
+            <main class="main-area">
+                <div>
+                    <h1 class="page-title">Market Overview</h1>
+                    <p class="page-subtitle">Live cryptocurrency and forex market prices.</p>
+                </div>
+                
+                <div class="panel">
+                    <div class="table-container">
+                        <table class="market-table">
+                            <thead>
+                                <tr>
+                                    <th>Asset</th>
+                                    <th>Price</th>
+                                    <th>24h Change</th>
+                                    <th>24h Volume</th>
+                                    <th>Market Cap</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="coin-cell">
+                                            <span style="color: #F7931A;">₿</span>
+                                            Bitcoin <span class="coin-symbol">BTC</span>
+                                        </div>
+                                    </td>
+                                    <td>$64,230.50</td>
+                                    <td class="ticker-price up">+2.45%</td>
+                                    <td>$32.5B</td>
+                                    <td>$1.2T</td>
+                                    <td><button class="btn-connect" style="padding: 6px 12px; font-size:12px;">Trade</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="coin-cell">
+                                            <span style="color: #627EEA;">Ξ</span>
+                                            Ethereum <span class="coin-symbol">ETH</span>
+                                        </div>
+                                    </td>
+                                    <td>$3,450.20</td>
+                                    <td class="ticker-price down">-1.20%</td>
+                                    <td>$15.2B</td>
+                                    <td>$410B</td>
+                                    <td><button class="btn-connect" style="padding: 6px 12px; font-size:12px;">Trade</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="coin-cell">
+                                            <span style="color: #009393;">₮</span>
+                                            Tether <span class="coin-symbol">USDT</span>
+                                        </div>
+                                    </td>
+                                    <td>$1.00</td>
+                                    <td class="ticker-price up">+0.01%</td>
+                                    <td>$40.1B</td>
+                                    <td>$98B</td>
+                                    <td><button class="btn-connect" style="padding: 6px 12px; font-size:12px;">Trade</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Prominent AI Assistant Panel -->
+            <aside class="ai-panel">
+                <div class="ai-header">
+                    <div class="ai-avatar">AI</div>
+                    <div class="ai-title"><h3>Chartix Intelligence</h3><p>Online & Ready</p></div>
+                </div>
+                <div class="chat-history" id="chat-container">
+                    <div class="msg ai"><div class="msg-bubble">Bạn đang xem bảng giá tổng hợp. Bạn muốn tôi phân tích tiềm năng của đồng coin nào trong danh sách này?</div></div>
+                </div>
+                <div class="chat-input-area">
+                    <div class="input-box">
+                        <input type="text" placeholder="Hỏi AI về mã giao dịch..." id="chat-input" autocomplete="off">
+                        <button class="btn-send" id="btn-send"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
