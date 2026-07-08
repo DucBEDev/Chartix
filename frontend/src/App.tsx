@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
+import Markets from './pages/Markets';
 import Header from './components/Header';
 import ChatbotPanel from './components/ChatbotPanel';
 
@@ -14,8 +15,7 @@ function AppContent() {
         <main className="main-area">
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            {/* Other routes can be added here later */}
-            <Route path="/markets" element={<div style={{padding: 24}}>Markets Page (Coming Soon)</div>} />
+            <Route path="/markets" element={<Markets />} />
             <Route path="/news" element={<div style={{padding: 24}}>News Page (Coming Soon)</div>} />
             <Route path="/calendar" element={<div style={{padding: 24}}>Calendar Page (Coming Soon)</div>} />
           </Routes>

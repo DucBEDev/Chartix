@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import TradingChart from '../components/TradingChart';
 
 const TOP_COINS = [
@@ -18,8 +19,23 @@ const TIMEFRAMES = [
 ];
 
 export default function Dashboard() {
-  const [symbol, setSymbol] = useState('BTCUSDT');
+  const location = useLocation();
+  const [symbol, setSymbol] = useState(() => {
+    const params = new URLSearchParams(location.search);
+    return params.get('symbol') || 'BTCUSDT';
+  });
   const [interval, setInterval] = useState('1h');
+
+  // Sync query params when they change externally (e.g. going back/forward)
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const symbolParam = params.get('symbol');
+    if (symbolParam && symbolParam !== symbol) {
+      setSymbol(symbolParam);
+    }
+  }, [location.search]);
+
+  const displayCoins = TOP_COINS.includes(symbol) ? TOP_COINS : [symbol, ...TOP_COINS];
 
   // Simple mock AI logic based on timeframe and symbol
   const isUp = symbol === 'BTCUSDT' || symbol === 'ETHUSDT' || symbol === 'SOLUSDT';
@@ -40,7 +56,7 @@ export default function Dashboard() {
             value={symbol} 
             onChange={(e) => setSymbol(e.target.value)}
           >
-            {TOP_COINS.map(coin => (
+            {displayCoins.map(coin => (
               <option key={coin} value={coin}>
                 {coin.replace('USDT', '/USDT')}
               </option>
