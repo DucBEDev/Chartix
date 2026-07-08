@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import Markets from './pages/Markets';
+import News from './pages/News';
+import NewsDetail from './pages/NewsDetail';
 import Header from './components/Header';
 import ChatbotPanel from './components/ChatbotPanel';
 
@@ -16,7 +18,8 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/markets" element={<Markets />} />
-            <Route path="/news" element={<div style={{padding: 24}}>News Page (Coming Soon)</div>} />
+            <Route path="/news" element={<News />} />
+            <Route path="/news/detail" element={<NewsDetail />} />
             <Route path="/calendar" element={<div style={{padding: 24}}>Calendar Page (Coming Soon)</div>} />
           </Routes>
         </main>
