@@ -3,6 +3,7 @@ import Dashboard from './pages/Dashboard';
 import Markets from './pages/Markets';
 import News from './pages/News';
 import NewsDetail from './pages/NewsDetail';
+import Calendar from './pages/Calendar';
 import Header from './components/Header';
 import ChatbotPanel from './components/ChatbotPanel';
 
@@ -20,7 +21,7 @@ function AppContent() {
             <Route path="/markets" element={<Markets />} />
             <Route path="/news" element={<News />} />
             <Route path="/news/detail" element={<NewsDetail />} />
-            <Route path="/calendar" element={<div style={{padding: 24}}>Calendar Page (Coming Soon)</div>} />
+            <Route path="/calendar" element={<Calendar />} />
           </Routes>
         </main>
         
