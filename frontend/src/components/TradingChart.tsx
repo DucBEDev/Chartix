@@ -40,6 +40,7 @@ export default function TradingChart({ symbol, interval }: TradingChartProps) {
       timeScale: {
         timeVisible: true,
         secondsVisible: false,
+        rightOffset: 40, // Shifts the last candle to the left by about 1/3 screen
       },
     });
 
@@ -86,13 +87,17 @@ export default function TradingChart({ symbol, interval }: TradingChartProps) {
           return;
         }
 
-        const formattedData = data.map((d: any) => ({
-          time: (d[0] / 1000) as UTCTimestamp,
-          open: parseFloat(d[1]),
-          high: parseFloat(d[2]),
-          low: parseFloat(d[3]),
-          close: parseFloat(d[4]),
-        }));
+        const formattedData = data.map((d: any) => {
+          const timestampMs = d[0];
+          const localOffset = new Date(timestampMs).getTimezoneOffset() * 60;
+          return {
+            time: (timestampMs / 1000 - localOffset) as UTCTimestamp,
+            open: parseFloat(d[1]),
+            high: parseFloat(d[2]),
+            low: parseFloat(d[3]),
+            close: parseFloat(d[4]),
+          };
+        });
 
         // Merge data
         const oldData = chartDataRef.current;
@@ -128,8 +133,11 @@ export default function TradingChart({ symbol, interval }: TradingChartProps) {
         const kline = message.k;
         
         if (kline) {
+          const timestampMs = kline.t;
+          const localOffset = new Date(timestampMs).getTimezoneOffset() * 60;
+          
           const update = {
-            time: (kline.t / 1000) as UTCTimestamp,
+            time: (timestampMs / 1000 - localOffset) as UTCTimestamp,
             open: parseFloat(kline.o),
             high: parseFloat(kline.h),
             low: parseFloat(kline.l),
